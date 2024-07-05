@@ -1,0 +1,163 @@
+import java.util.Scanner;
+import java.util.Random;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+
+public class java {
+	
+	public static void println(String a)
+	{
+		System.out.println(a);
+	}
+	
+	public static void println2(String a,int c)
+	{
+		System.out.println(a+c);
+	}
+	
+	public static void print(String a)
+	{
+		System.out.print(a);
+	}
+	
+	public static void print2(String a,int c)
+	{
+		System.out.print(a+c);
+	}
+
+	public static void main(String[] args) {
+		// println()
+		
+		System.out.println("SYSTEM.OUT.PRINTLN(): ");
+		
+		System.out.println("Hello world!");
+		
+		// Scanner (biblioteka [java.util.Scanner])
+		
+		System.out.println("SCANNER: ");
+		
+		Scanner input = new Scanner(System.in);
+		
+		String scanner = input.next();
+		
+		System.out.println(scanner);
+		
+		// dzialania proste
+		
+		int a=2,b=2,c;
+		
+		c = a + b;
+		
+		println2("a+b ",c);
+		
+		c = a - b;
+		
+		println2("a-b ",c);
+		
+		c = a / b;
+		
+		println2("a/b ",c);
+		
+		c = a * b;
+		
+		println2("a*b ",c);
+		
+		//if
+		
+		println("IF: ");
+		
+		if(a==b)
+		{
+			println("a == b");
+		}
+		
+		//switch
+		println("SWITCH: ");
+		
+		print("Podaj 1 albo 2: ");
+		
+		int wybor = input.nextInt();		
+		
+		switch(wybor)
+		{
+		case 1: println("Tak"); break;
+		
+		case 2: println("Nie"); break;
+		}
+		
+		//for
+		
+		println("FOR: ");
+		
+		for(int i=0; i<10; i++)
+		{
+			System.out.print(i + ", ");
+		}
+		
+		println("");
+		
+		//while
+		
+		println("WHILE: ");
+		
+		while(a<10)
+		{
+			println("a < 10");
+			a++;
+		}
+		
+		//pseudo-random numbers(library [java.util.Random])
+		
+		println("pseudo-random numbers: ");
+		
+		Random liczba = new Random();
+		
+		int los = liczba.nextInt(101);
+		
+		println2("The number drawn is: ",los);
+		
+		//table (SIMPLE)
+		
+		println("TABLE (SIMPLE): ");
+		
+		int[] tab = new int[10];
+		
+		for(int i=0; i<10; i++)
+		{
+			tab[i] = i;
+		}
+		
+		//fibonaciego
+		
+		println("Fibonaci sequence: ");
+		
+		print("Enter quantity of numbers in Fibonaci sequence: ");
+		
+		int f = input.nextInt();
+		
+		int[] fib = new int[10000];
+		
+		fib[0] = 1;
+		fib[1] = 1;
+		
+		for(int i=2; i<f ; i++)
+		{
+			fib[i] = fib[i-1] + fib[i-2];
+		}
+		for(int i=0; i<f; i++)
+		{
+			print2("Fib: ",fib[i]);
+		}
+		
+	}
+	
+
+}
+
+
