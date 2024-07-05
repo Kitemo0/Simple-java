@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class HelloWorld {
+
+	public static double avarage(float sum,float weight_count)
+	{
+		return sum/weight_count;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float sum=0;
+		float weight_count=0;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter equantity of subjects: ");
+		
+		int equantity_s = input.nextInt();
+		String[] name = new String[equantity_s];
+		double[] grades = new double[equantity_s];
+		
+		for(int i=0; i<equantity_s; i++)
+		{
+		
+			System.out.println("Enter subject name: ");
+			name[i] = input.next();
+			System.out.println("Enter equantity of grades for this subject:");
+			int equantity = input.nextInt();
+			
+			for(int j=0; j<equantity; j++)
+			{
+				System.out.println("Enter grade: ");
+				int grade = input.nextInt();
+				System.out.println("Enter weight of grade: ");
+				float weight = input.nextFloat();
+				
+				
+				sum += grade*weight;
+				
+				weight_count +=weight;
+				
+				
+			}
+			
+			grades[i] = avarage(sum,weight_count);
+			sum = 0;
+			weight_count = 0;
+		}
+		for(int i=0; i<equantity_s; i++)
+		{
+			System.out.printf("\u001B[32m" + name[i] + "\u001B[0m" + ": " + grades[i] + '\n');
+		}
+	}
+
+}
